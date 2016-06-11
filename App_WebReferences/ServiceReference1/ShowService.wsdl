@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ShowService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:11040/ShowService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:11040/ShowService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:11040/ShowService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IShowService_VenueLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:VenueLogin" />
+  </wsdl:message>
+  <wsdl:message name="IShowService_VenueLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VenueLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShowService_VenueRegistration_InputMessage">
+    <wsdl:part name="parameters" element="tns:VenueRegistration" />
+  </wsdl:message>
+  <wsdl:message name="IShowService_VenueRegistration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VenueRegistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShowService_ArtistAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:ArtistAdd" />
+  </wsdl:message>
+  <wsdl:message name="IShowService_ArtistAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ArtistAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShowService_ShowAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:ShowAdd" />
+  </wsdl:message>
+  <wsdl:message name="IShowService_ShowAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ShowAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShowService_ShowDetailAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:ShowDetailAdd" />
+  </wsdl:message>
+  <wsdl:message name="IShowService_ShowDetailAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ShowDetailAddResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IShowService">
+    <wsdl:operation name="VenueLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShowService/VenueLogin" message="tns:IShowService_VenueLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShowService/VenueLoginResponse" message="tns:IShowService_VenueLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VenueRegistration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShowService/VenueRegistration" message="tns:IShowService_VenueRegistration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShowService/VenueRegistrationResponse" message="tns:IShowService_VenueRegistration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ArtistAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShowService/ArtistAdd" message="tns:IShowService_ArtistAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShowService/ArtistAddResponse" message="tns:IShowService_ArtistAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ShowAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShowService/ShowAdd" message="tns:IShowService_ShowAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShowService/ShowAddResponse" message="tns:IShowService_ShowAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ShowDetailAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShowService/ShowDetailAdd" message="tns:IShowService_ShowDetailAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShowService/ShowDetailAddResponse" message="tns:IShowService_ShowDetailAdd_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IShowService" type="tns:IShowService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VenueLogin">
+      <soap:operation soapAction="http://tempuri.org/IShowService/VenueLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VenueRegistration">
+      <soap:operation soapAction="http://tempuri.org/IShowService/VenueRegistration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ArtistAdd">
+      <soap:operation soapAction="http://tempuri.org/IShowService/ArtistAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowAdd">
+      <soap:operation soapAction="http://tempuri.org/IShowService/ShowAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowDetailAdd">
+      <soap:operation soapAction="http://tempuri.org/IShowService/ShowDetailAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ShowService">
+    <wsdl:port name="BasicHttpBinding_IShowService" binding="tns:BasicHttpBinding_IShowService">
+      <soap:address location="http://localhost:11040/ShowService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
